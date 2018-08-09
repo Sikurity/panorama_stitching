@@ -8,35 +8,35 @@
 
 // DO NOT CHANGE THIS FILE
 
-typedef struct{
-    int w,h,c;
-    float *data;
+typedef struct {
+	int w, h, c;
+	float *data;
 } image;
 
 // A 2d point.
 // float x, y: the coordinates of the point.
-typedef struct{
-    float x, y;
+typedef struct {
+	float x, y;
 } point;
 
 // A descriptor for a point in an image.
 // point p: x,y coordinates of the image pixel.
 // int n: the number of floating point values in the descriptor.
 // float *data: the descriptor for the pixel.
-typedef struct{
-    point p;
-    int n;
-    float *data;
+typedef struct {
+	point p;
+	int n;
+	float *data;
 } descriptor;
 
 // A match between two points in an image.
 // point p, q: x,y coordinates of the two matching pixels.
 // int ai, bi: indexes in the descriptor array. For eliminating duplicates.
 // float distance: the distance between the descriptors for the points.
-typedef struct{
-    point p, q;
-    int ai, bi;
-    float distance;
+typedef struct {
+	point p, q;
+	int ai, bi;
+	float distance;
 } match;
 
 // Basic operations
@@ -99,4 +99,3 @@ descriptor *harris_corner_detector(image im, float sigma, float thresh, int nms,
 image panorama_image(image a, image b, float sigma, float thresh, int nms, float inlier_thresh, int iters, int cutoff);
 
 #endif
-

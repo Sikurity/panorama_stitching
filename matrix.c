@@ -225,7 +225,7 @@ matrix matrix_invert(matrix m)
             c.data[k][j] /= val;
         }
         for(i = k+1; i < c.rows; ++i){
-            float s = -c.data[i][k];
+            float s = -(float)c.data[i][k];
             c.data[i][k] = 0;
             for(j = k+1; j < c.cols; ++j){
                 c.data[i][j] +=  s*c.data[k][j];

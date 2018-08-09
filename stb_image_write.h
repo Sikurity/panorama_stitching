@@ -166,6 +166,7 @@ LICENSE
   See end of file for license information.
 
 */
+#define _CRT_SECURE_NO_WARNINGS
 
 #ifndef INCLUDE_STB_IMAGE_WRITE_H
 #define INCLUDE_STB_IMAGE_WRITE_H

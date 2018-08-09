@@ -102,11 +102,11 @@ void test_shift()
 {
     image im = load_image("data/dog.jpg");
     image c = copy_image(im);
-    shift_image(c, 1, .1);
+    shift_image(c, 1, .1f);
     TEST(within_eps(c.data[0], im.data[0]));
-    TEST(within_eps(c.data[im.w*im.h + 13], im.data[im.w*im.h+13] + .1));
+    TEST(within_eps(c.data[im.w*im.h + 13], im.data[im.w*im.h+13] + .1f));
     TEST(within_eps(c.data[2*im.w*im.h + 72], im.data[2*im.w*im.h+72]));
-    TEST(within_eps(c.data[im.w*im.h + 47], im.data[im.w*im.h+47] + .1));
+    TEST(within_eps(c.data[im.w*im.h + 47], im.data[im.w*im.h+47] + .1f));
     free_image(im);
     free_image(c);
 }
